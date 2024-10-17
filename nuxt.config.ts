@@ -5,6 +5,11 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/test-utils/module',
     '@vueuse/nuxt',
+
+    // best practices
+    '@nuxt/fonts',
+    '@nuxt/scripts',
+    '@nuxtjs/seo',
   ],
 
   eslint: {
