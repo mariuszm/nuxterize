@@ -10,6 +10,11 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/scripts',
     '@nuxtjs/seo',
+
+    // personal favs
+    '@nuxt/content',
+    '@nuxt/icon',
+    '@nuxtjs/color-mode',
   ],
 
   eslint: {
