@@ -15,6 +15,20 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxt/icon',
     '@nuxtjs/color-mode',
+
+    (_options, nuxt) => {
+      nuxt.hook('devtools:customTabs', (tabs) => {
+        tabs.push({
+          name: 'nuxterize',
+          title: 'Swagger API',
+          icon: '/vscode-icons--file-type-swagger.svg',
+          view: {
+            type: 'iframe',
+            src: '/_nitro/swagger',
+          },
+        })
+      })
+    },
   ],
 
   eslint: {
@@ -23,6 +37,33 @@ export default defineNuxtConfig({
     },
   },
 
-  compatibilityDate: '2024-04-03',
+  imports: {
+    autoImport: false,
+  },
+
+  vite: {
+    css: {
+      preprocessorOptions: {
+        api: 'modern-compiler',
+      },
+    },
+  },
+
+  experimental: {
+    typedPages: true,
+  },
+
+  nitro: {
+    experimental: {
+      openAPI: true,
+    },
+  },
+
   devtools: { enabled: true },
+
+  compatibilityDate: '2024-04-03',
+
+  future: {
+    compatibilityVersion: 4,
+  },
 })
