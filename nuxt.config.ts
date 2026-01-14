@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   modules: [
     // essentials
     '@nuxt/eslint',
-    '@nuxt/test-utils/module',
+    '@nuxt/test-utils',
     '@vueuse/nuxt',
 
     // best practices
@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/color-mode',
 
+    // swagger api in devtools
     (_options, nuxt) => {
       nuxt.hook('devtools:customTabs', (tabs) => {
         tabs.push({
@@ -31,12 +32,14 @@ export default defineNuxtConfig({
     },
   ],
 
+  // eslint flat config
   eslint: {
     config: {
       standalone: false,
     },
   },
 
+  // disable autoimports
   imports: {
     autoImport: false,
   },
@@ -61,9 +64,9 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
-  compatibilityDate: '2024-04-03',
+  compatibilityDate: '2026-01-13',
 
   future: {
-    compatibilityVersion: 4,
+    compatibilityVersion: 5,
   },
 })
